@@ -1,0 +1,3450 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.weddingonto.org#"
+     xml:base="http://www.weddingonto.org"
+     xmlns:dt="http://purl.org/dc/terms/"
+     xmlns:dul="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rss="http://www.ontologydesignpatterns.org/cp/owl/recurrentsituationseries.owl#"
+     xmlns:seo="https://w3id.org/scholarlydata/ontology/conference-ontology.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Photo="http://www.weddingonto.org#Photo/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://www.weddingonto.org">
+        <dt:contributor>Anum Saleem</dt:contributor>
+        <rdfs:label xml:lang="en">Wedding Ontology</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.weddingonto.org#Adopted -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Adopted">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#DecorOrganizer"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingTheme"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding planner adopted wedding theme</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#AdoptedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#AdoptedBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#DecorOrganizer"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingTheme"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decor organizer adopted wedding theme</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#AreDesignedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#AreDesignedBy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Costumes"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Mayun"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#DressDesigner"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costumes are designed by dress designer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#AreDistributedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#AreDistributedBy">
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#Distrubuted"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingCards"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BrideFamily"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#GroomFamily"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding cards are distributed by Bride/groom family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#ArrangedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#ArrangedBy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/EventVenue"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BaratWeddingHotel"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#WaleemaHotel"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event Venue arranged by wedding planner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#ArrangedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#ArrangedFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#ConsistsOf"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <rdfs:range rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Food/catering company arranged for event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#ComesAfter -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#ComesAfter">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Chauthi"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Maklawa"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chauthi comes after maklawa</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#ConductedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#ConductedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#Conducts"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Nikah"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#ImamMufti"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nikah is conducted by imam mufti</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#ConductedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#ConductedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Nikah"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Masjid"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nikah conducted in masjid</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Conducts -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Conducts">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#ImamMufti"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Nikah"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imammufti conducts nikah</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#ConsistsOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#ConsistsOf">
+        <rdfs:domain rdf:resource="http://schema.org/Organization"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#EventOrganization"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#FoodCateringCompany"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organization consists of event organization and food/catering company</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#HasSubEvents"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Barat"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Nikah"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Waleema"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#WeddingRefreshment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding ceremony contains Barat, Nikah, Waleema, Wedding refreshement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#DealsWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#DealsWith">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Photography"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Photostudio deals with photography</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Decided -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Decided">
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#DecidedBy"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <rdfs:range rdf:resource="http://schema.org/EventVenue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding planner decided event venue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#DecidedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#DecidedBy">
+        <rdfs:domain rdf:resource="http://schema.org/EventVenue"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EventVenue decided by wedding planner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Decides -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Decides">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#ConsistsOf"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <rdfs:range rdf:resource="http://schema.org/Menu"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Food/catering company decides menu</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Designed -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Designed">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#DressDesigner"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Costumes"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dress designer designed costumes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Distrubuted -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Distrubuted">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BrideFamily"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#GroomFamily"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingCards"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groom/Bride family distributed wedding cards</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#EntranceAreaTowards -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#EntranceAreaTowards">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Reception"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#BaratWeddingHotel"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reception is enterance area towards barat wedding hotel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#GivesServices -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#GivesServices">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Saloon"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Bride"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saloon gives services to Bride</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Has -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Has">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#HasSubEvents"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BridalShower"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Dholki"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Dozokhi"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#JolBandi"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Mayun"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Mehndi"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#RasmeHinna"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prewedding event has dholki, mayun, mehndi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasCompanyRating -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasCompanyRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#ConsistsOf"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <rdfs:range rdf:resource="http://schema.org/AggregateRating"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">food/Catering company has company rating</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasInterval -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasInterval">
+        <rdfs:domain rdf:resource="http://schema.org/Event"/>
+        <rdfs:range rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event has Time interval</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasLastEvent -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasLastEvent">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Waleema"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding ceremony has last event waleema</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasOrganizationRating -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasOrganizationRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#ConsistsOf"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <rdfs:range rdf:resource="http://schema.org/AggregateRating"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event organization has organization rating</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasOrganizedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasOrganizedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Barat"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#BaratWeddingHotel"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barat has orgaized in barat wedding hotel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasRating -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasRating">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Boutique"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#DecorOrganizer"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#DressDesigner"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#FoodCateringCompany"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Photographer"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Saloon"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Singers"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#WeddingPlanner"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/AggregateRating"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decor Organizer, WeddingPlanner, DressDesigner , saloon and boutique Has Aggregate Rating</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasRituals -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasRituals">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Barat"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#DastarBandi"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#SehraBandi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barat has rituals sehra bandi and dastar bandi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasSubEvents -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasSubEvents">
+        <rdfs:domain rdf:resource="http://schema.org/Event"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#PostWeddingEvents"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#PreWeddingEvents"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#PreWeddingRituals"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#WeddingCeremony"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding Event has sub events pre wedding rituals, prewedding events, wedding ceremony and post wedding events</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HasVariety -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#HasVariety">
+        <rdfs:domain rdf:resource="http://schema.org/FoodService"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#FoodServingStyle"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Food service has variey Food service styles</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Hosted -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Hosted">
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#IsHostedBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BrideFamily"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#GroomFamily"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#DuaeKhair"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groom/Bride family hosted /duae khair</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Includes">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#PreWeddingRituals"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#DuaeKhair"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Mangni"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#MarriageProposal"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Nisbat"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prewedding events includes Marriage proposal, duaekher, mangni</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IncludesSubevents -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IncludesSubevents">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#PostWeddingEvents"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Chauthi"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Maklawa"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Postwedding events include subevents chauthi, maklawa</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Invited -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Invited">
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#InvitedBy"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#GroomFamily"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#MusicBand"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groom family invited music band</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#InvitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#InvitedBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#MusicBand"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#GroomFamily"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Music band invited by Groom family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#InvitedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#InvitedIn">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#GuestOfHonor"/>
+        <rdfs:range rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Music band is invited in Event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsArrangedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsArrangedBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingRefreshment"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding refreshment is arranged by Food/catering company</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsBeginningOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsBeginningOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Includes"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#MarriageProposal"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#PreWeddingRituals"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marriage proposal is beginning of wedding event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsDaughterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsDaughterOf">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Bride"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#BrideFamily"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bride is daugher of bride family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsDoneAfter -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsDoneAfter">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Includes"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Mangni"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#MarriageProposal"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mangni is done after marriage proposal</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsDoneBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsDoneBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Photography"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Photographer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Photography is done by photographer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsEquivalentTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsEquivalentTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Includes"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Mangni"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#HabarBandi"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Nisbat"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mangni is equivalent to nisbat and habar bandi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsGifted -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsGifted">
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#IsGiftedTo"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Bride"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Mehr"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bride is gifted Mehr</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsGiftedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsGiftedTo">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Mehr"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Bride"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehr is gifted to bride</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsGivenAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsGivenAt">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Ring"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Mangni"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ring is given at mangni</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsGivenBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsGivenBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Dowry"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#BrideFamily"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dowry is givent by Bride family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsHostedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsHostedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Includes"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#DuaeKhair"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BrideFamily"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#GroomFamily"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Duaekhair is hosted by Bride/Groom family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsOwnedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsOwnedBy">
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#Owned"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Boutique"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#DressDesigner"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boutique is Owned by Dress designer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsOwnerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsOwnerOf">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#DressDesigner"/>
+        <rdfs:range rdf:resource="http://schema.org/Brand"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dress designer is owner of schema:Brand</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsSituatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsSituatedIn">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/EventVenue"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Boutique"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#FoodCateringCompany"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#PhotoStudio"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Saloon"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://schema.org/City"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EventVenue is stiuated in schema:city</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsSonOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsSonOf">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Groom"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#GroomFamily"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groom is son of groom family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#IsThrownBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#IsThrownBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Has"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#BridalShower"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Friends"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brifdal shower is thrown by Friends</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#OccursAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#OccursAt">
+        <rdfs:domain rdf:resource="http://schema.org/Event"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Events occurs at place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#OccursBefore -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#OccursBefore">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Maklawa"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Chauthi"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maklawa occurs before chauthi</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Organized -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Organized">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <rdfs:range rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event organization organized event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#OrganizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#OrganizedBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingDecorations"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#DecorOrganizer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding decorations organized by decor organizer</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#OrganizedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#OrganizedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Barat"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Waleema"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BaratWeddingHotel"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#WaleemaHotel"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barat and waleema Organized in barat wedding hotel and waleema hotel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Owned -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Owned">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#DressDesigner"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Boutique"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dress designer owned boutique</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Paid -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Paid">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BrideFamily"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#GroomFamily"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groom/Bride family paid wedding charges</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PaidBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#PaidBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#BrideFamily"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#GroomFamily"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding charges paid by Grrom family and bride family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PaidTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#PaidTo">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <rdfs:range rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding charges paid to person</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Pays -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Pays">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Groom"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Mehr"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Grooms pays mehr</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Performed -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Performed">
+        <owl:inverseOf rdf:resource="http://www.weddingonto.org#PerformedBy"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Performers"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Singers"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Performances"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">performers performed performances</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PerformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#PerformedBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Performances"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Performers"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Singers"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Performances performed by performers and singers</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PerformedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#PerformedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.weddingonto.org#Contains"/>
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#CeremonyRituals"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ceremony rituals performed in wedding ceremony</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Planned -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Planned">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <rdfs:range rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding planner planned event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PlannedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#PlannedBy">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Event"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Barat"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Mehndi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event planned by wedding planner</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PresentedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#PresentedBy">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Bari"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#GroomFamily"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bari presented by Groom family</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Provides -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Provides">
+        <rdfs:domain rdf:resource="http://schema.org/FoodService"/>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#FoodServingStyle"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Food service provides food serving styles</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Wears -->
+
+    <owl:ObjectProperty rdf:about="http://www.weddingonto.org#Wears">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Person"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Bride"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Groom"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.weddingonto.org#Costumes"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Person, Bride and Groom wears Costumes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/givenName -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/givenName">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Person"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Bride"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Costumes"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Groom"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Performances"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#WeddingPlanner"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">given name is property of person</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/ratingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/ratingValue">
+        <rdfs:domain rdf:resource="http://schema.org/AggregateRating"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aggregate rating has property rating value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Amount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#Amount">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Mehr"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">amount of mehr</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#CostumeColor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#CostumeColor">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Costumes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yellow is the Costume color of mayun</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#CostumeItems -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#CostumeItems">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.weddingonto.org#DressBride"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#DressGroom"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costume items include dress bride and dress groom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#DecorCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#DecorCharges">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#DecorOrganizer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#EventDay -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#EventDay">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://schema.org/Event"/>
+                    <rdf:Description rdf:about="http://www.weddingonto.org#Chauthi"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">event has event day</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodItems -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#FoodItems">
+        <rdfs:domain rdf:resource="http://schema.org/Menu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">menu include food items</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#HotelCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#HotelCharges">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hotel charges are paid by bride and groom family</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#NikahCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#NikahCharges">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nikah Charges are paid by bride/groom family</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#NikahVenue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#NikahVenue">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Masjid"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">masjid is nikah venue in wedding event</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PerformanceCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#PerformanceCharges">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Performances"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">performance charges are paid to performers</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#PlannerCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#PlannerCharges">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">planner charges are paid by groom and bride family</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Profession -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#Profession">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#GuestOfHonor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">guest of honor has profession politician</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Properties -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#Properties">
+        <rdfs:domain rdf:resource="http://schema.org/Menu"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">menu has properties</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#SingingCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#SingingCharges">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#Singers"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.weddingonto.org#Photo/VideographyCharges -->
+
+    <owl:DatatypeProperty rdf:about="http://www.weddingonto.org#Photo/VideographyCharges">
+        <rdfs:domain rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">these charges are paid to photographer</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/AggregateRating -->
+
+    <owl:Class rdf:about="http://schema.org/AggregateRating">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aggregate Rating has schema:ratingvalue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Brand -->
+
+    <owl:Class rdf:about="http://schema.org/Brand">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brand is Owned by Dress desinger</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/City -->
+
+    <owl:Class rdf:about="http://schema.org/City">
+        <rdfs:subClassOf rdf:resource="http://schema.org/EventVenue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">City is subclass of schema:EventVenue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Event -->
+
+    <owl:Class rdf:about="http://schema.org/Event">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event was planned by wedding planner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/EventVenue -->
+
+    <owl:Class rdf:about="http://schema.org/EventVenue">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event Venue is subclass of Schema:Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/FoodService -->
+
+    <owl:Class rdf:about="http://schema.org/FoodService">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Food Service involves Catering and Food serving</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Menu -->
+
+    <owl:Class rdf:about="http://schema.org/Menu">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Menu decided by Foof/catering company</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Organization -->
+
+    <owl:Class rdf:about="http://schema.org/Organization">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organization includes EventOrganization and Food/CateringCompany</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bride, groom and guests ets are under superclass schema:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="http://schema.org/Place">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">schema:Place includes schema:EventVenue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval -->
+
+    <owl:Class rdf:about="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#TimeInterval">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding Event has time interval class</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Banoor -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Banoor">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Bride"/>
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Banoor is an equivalent class of Bride</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Barat -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Barat">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#BaratWeddingHotel -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#BaratWeddingHotel">
+        <rdfs:subClassOf rdf:resource="http://schema.org/EventVenue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BaratWeddingHotel Arranged By Wedding Planner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Bari -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Bari">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bari given by Groom family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Boutique -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Boutique">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boutique is subclass of schema:Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#BridalShower -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#BridalShower">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bridal shower is thrown by friends</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Bride -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Bride">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Saloonk"/>
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bride has equivalent class Banoor and Saloonk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#BrideFamily -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#BrideFamily">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bride Family is subclass of schema:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#CeremonyRituals -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#CeremonyRituals">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These rituals are performed during wedding ceremony</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Chauthi -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Chauthi">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PostWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the last post wedding event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Costumes -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Costumes">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costumes are Designed By Dress designer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#DastarBandi -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#DastarBandi">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Barat"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DastarBandi is subevent of Barat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#DecorOrganizer -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#DecorOrganizer">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Organizer"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decor Organizer Organized Decor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Dholki -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Dholki">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Dowry -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Dowry">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dowry is given by Bride Family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Dozokhi -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Dozokhi">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Mehndi"/>
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an equivalent class of Mehndi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#DressBride -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#DressBride">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Costumes"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DressBride is designed by dress designer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#DressDesigner -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#DressDesigner">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dress Designer designed costumes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#DressGroom -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#DressGroom">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Costumes"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dress Groom designed by dress designer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#DuaeKhair -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#DuaeKhair">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingRituals"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DuaeKhair is hosted by bride family and groom family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#EventOrganization -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#EventOrganization">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">it is subclass of schema:Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodCateringCompany -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#FoodCateringCompany">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Food/Catering company organzed wedding menu</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodServingStyle -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#FoodServingStyle">
+        <rdfs:subClassOf rdf:resource="http://schema.org/FoodService"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Food serving style is subclass of schem:food service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Friends -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Friends">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Friends is subclass of schema:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Groom -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Groom">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groom is subclass of schema:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#GroomFamily -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#GroomFamily">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Groom Family is subclas of schema:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#GuestOfHonor -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#GuestOfHonor">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Guests"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guest of Honor invited in schema:Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Guests -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Guests">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guests are invited in wedding event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#HabarBandi -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#HabarBandi">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Mangni"/>
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingRituals"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HabarBandi is an equivalent class of Mangni</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#ImamMufti -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#ImamMufti">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Guests"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Imam Mufti conducted Nikah</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Jannh -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Jannh">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Wedding"/>
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an equiavalent class of wedding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#JolBandi -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#JolBandi">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Mehndi"/>
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jolbandi is equivalent class of Mehndi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Maklawa -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Maklawa">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PostWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maklawa is postwedding event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Mangni -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Mangni">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Nisbat"/>
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingRituals"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mangni is done after marriage proposal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#MarriageProposal -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#MarriageProposal">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingRituals"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marriage proposal is the start of wedding rituals</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Masjid -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Masjid">
+        <rdfs:subClassOf rdf:resource="http://schema.org/EventVenue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Masjid is subclass of schema:Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Mayun -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Mayun">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mayun has a subclass Ubtan</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Mehndi -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Mehndi">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#RasmeHinna"/>
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Mehr -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Mehr">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Sadaq"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehr is Gifted to Bride</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#MusicBand -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#MusicBand">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Music Band was invited by Groom Family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Nikah -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Nikah">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Nisbat -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Nisbat">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingRituals"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nisbat is equivalent class of Mangni</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Organizer -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Organizer">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Organizer has subclass Decor organizer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Performances -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Performances">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Performances performed by performers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Performers -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Performers">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Guests"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Performers Performed performances</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#PhotoStudio -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#PhotoStudio">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Photostudios deal with event photography</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Photographer">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Photographer gives photorgraphy services</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Photography -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Photography">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Photography is done by Photographers</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#PostWeddingEvents -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#PostWeddingEvents">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+        <owl:disjointWith rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PostWedding events include chauthi and maklawa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#PreWeddingEvents -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#PreWeddingEvents">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prewedding events is subclass of schema:Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#PreWeddingRituals -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#PreWeddingRituals">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">These are start of a wedding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#RasmeHinna -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#RasmeHinna">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#PreWeddingEvents"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rasmehinna is equivalent class of Mehndi</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Reception -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Reception">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reception is done at Wedding ceremony event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Ring -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Ring">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ring is gifted in mengni</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Rukhsati -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Rukhsati">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is the subclass of wedding ceremony</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Sadaq -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Sadaq">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is equiavalent class of Mehr</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Saloon -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Saloon">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Place"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saloon gives services to Bride/Groom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Saloonk -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Saloonk">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">it is an equivalent class of Bride</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#SehraBandi -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#SehraBandi">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Barat"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SehraBandi is subevent of Barat</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Singers -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Singers">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Guests"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singers performed singing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Ubtan -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Ubtan">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#Mayun"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ubtan is done at mayun event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Waddah -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Waddah">
+        <owl:equivalentClass rdf:resource="http://www.weddingonto.org#Wedding"/>
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an equivalent class of Wedding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Waleema -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Waleema">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WaleemaHotel -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WaleemaHotel">
+        <rdfs:subClassOf rdf:resource="http://schema.org/EventVenue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waleema Hotel is subclass of Schema:EventVenue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#Wedding -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#Wedding">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingCards -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WeddingCards">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding cards are distributed by Bride family and Groom family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingCeremony -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WeddingCeremony">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Event"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding ceremony is subclass of schema:Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingCharges -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WeddingCharges">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding charges are paid by groom/bride family</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingDecorations -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WeddingDecorations">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding Decorations organized by decor organizer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingPlanner -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WeddingPlanner">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingRefreshment -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WeddingRefreshment">
+        <rdfs:subClassOf rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding refreshment is subclass of wedding ceremony</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingTheme -->
+
+    <owl:Class rdf:about="http://www.weddingonto.org#WeddingTheme">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding themes are adopted by Decor organiser</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/scholarlydata/ontology/conference-ontology.owlOrganisation -->
+
+    <owl:Class rdf:about="https://w3id.org/scholarlydata/ontology/conference-ontology.owlOrganisation">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Organization"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">It is an equivalent class of schema:Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.weddingonto.org#Band1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Band1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#MusicBand"/>
+        <InvitedBy rdf:resource="http://www.weddingonto.org#Family2"/>
+        <schema:givenName>Uk Sahara&apos;s</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Barat -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Barat">
+        <rdf:type rdf:resource="http://schema.org/Event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BaratHotel1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BaratHotel1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#BaratWeddingHotel"/>
+        <ArrangedBy rdf:resource="http://www.weddingonto.org#Planner1"/>
+        <ArrangedBy rdf:resource="http://www.weddingonto.org#Planner2"/>
+        <schema:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RosaBalancaClub</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BaratHotelCharges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BaratHotelCharges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Planner1"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Planner2"/>
+        <schema:givenName>RosaBalancaClub</schema:givenName>
+        <HotelCharges>150Million</HotelCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BaratPhotography -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BaratPhotography">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BatairMasalaAndBeefChapliKabab -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BatairMasalaAndBeefChapliKabab">
+        <rdf:type rdf:resource="http://schema.org/Menu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Bhangra -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Bhangra">
+        <rdf:type rdf:resource="http://www.weddingonto.org#CeremonyRituals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BlackAndWhite -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BlackAndWhite">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Boutique1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Boutique1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Boutique"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>Dress Designer</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Boutique2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Boutique2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Boutique"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>Safina Boutique</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Boutique3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Boutique3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Boutique"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>Vogue Men</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Brand1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Brand1">
+        <rdf:type rdf:resource="http://schema.org/Brand"/>
+        <IsOwnedBy rdf:resource="http://www.weddingonto.org#DressDesigner1"/>
+        <schema:givenName>FarazMannan</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BridalAccessories -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BridalAccessories">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Bari"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BridalJewellary -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BridalJewellary">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Bari"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BridalPortraits -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BridalPortraits">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BridalShoes -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BridalShoes">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Bari"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Bride1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Bride1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Bride"/>
+        <IsDaughterOf rdf:resource="http://www.weddingonto.org#Family1"/>
+        <Wears rdf:resource="http://www.weddingonto.org#Costume1"/>
+        <schema:givenName>UnzilaMehmood</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BrideDresses -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BrideDresses">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Bari"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#BrideEvent -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#BrideEvent">
+        <rdf:type rdf:resource="http://www.weddingonto.org#BridalShower"/>
+        <IsThrownBy rdf:resource="http://www.weddingonto.org#FriendsBride"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Cards -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Cards">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCards"/>
+        <AreDistributedBy rdf:resource="http://www.weddingonto.org#Family1"/>
+        <AreDistributedBy rdf:resource="http://www.weddingonto.org#Family2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Catering -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Catering">
+        <rdf:type rdf:resource="http://schema.org/FoodService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Ceremony -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Ceremony">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Nikah"/>
+        <ConductedBy rdf:resource="http://www.weddingonto.org#Mufti1"/>
+        <NikahVenue>Masjid</NikahVenue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#CeremonyWed -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#CeremonyWed">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCeremony"/>
+        <HasLastEvent rdf:resource="http://www.weddingonto.org#EventW"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#City1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#City1">
+        <rdf:type rdf:resource="http://schema.org/City"/>
+        <schema:givenName>Sargodha</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#City2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#City2">
+        <rdf:type rdf:resource="http://schema.org/City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Cocktail -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Cocktail">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodServingStyle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Company1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Company1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <ArrangedFor rdf:resource="http://www.weddingonto.org#Barat"/>
+        <HasCompanyRating rdf:resource="http://www.weddingonto.org#FoodAndCateringCompany1"/>
+        <schema:givenName>Dynasty</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Company2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Company2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <HasCompanyRating rdf:resource="http://www.weddingonto.org#FoodAndCateringCompany2"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>EventsByPash</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Company3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Company3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <HasCompanyRating rdf:resource="http://www.weddingonto.org#FoodAndCateringCompany3"/>
+        <schema:givenName>TimeandTasteCatering&amp;EventManagementComapny</schema:givenName>
+        <FoodItems>BatairMasala, KoreanChicken, MurghPalao,MuttonShahiQoorma,,StirFriedRice and Sweets</FoodItems>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Company4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Company4">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <HasCompanyRating rdf:resource="http://www.weddingonto.org#FoodAndCateringCompany4"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>FoodstreetSargodha</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Company5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Company5">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodCateringCompany"/>
+        <schema:givenName>sahabJeeTentAndCateringCompany</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Costume1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Costume1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Costumes"/>
+        <AreDesignedBy rdf:resource="http://www.weddingonto.org#Designer1"/>
+        <CostumeItems>Lehnga,Sharara,Gharara,Maxi</CostumeItems>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Costume2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Costume2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Costumes"/>
+        <AreDesignedBy rdf:resource="http://www.weddingonto.org#Designer1"/>
+        <CostumeItems>PantCoat,Kurta,Sherwani</CostumeItems>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Crockery -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Crockery">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Dowry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Decor -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Decor">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingDecorations"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DecorCharges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DecorCharges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Organizer1"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Organizer2"/>
+        <DecorCharges>60-80 Million</DecorCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DecorOrganizer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DecorOrganizer1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>AhsanHabib</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.8</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DecorOrganizer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DecorOrganizer2">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>Siam Flower Shop Sargodha</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DecorOrganizer3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DecorOrganizer3">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SundasMustafa</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.5</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Designer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Designer1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#DressDesigner"/>
+        <Designed rdf:resource="http://www.weddingonto.org#Costume1"/>
+        <Designed rdf:resource="http://www.weddingonto.org#Costume2"/>
+        <Designed rdf:resource="http://www.weddingonto.org#DressMayun"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#DressDesigner1"/>
+        <schema:givenName>FarazMannan</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Dholki -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Dholki">
+        <rdf:type rdf:resource="http://www.weddingonto.org#CeremonyRituals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DoodhPilai -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DoodhPilai">
+        <rdf:type rdf:resource="http://www.weddingonto.org#CeremonyRituals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DressB -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DressB">
+        <rdf:type rdf:resource="http://www.weddingonto.org#DressBride"/>
+        <AreDesignedBy rdf:resource="http://www.weddingonto.org#Designer1"/>
+        <CostumeItems>Lenhga,Maxi,Frock</CostumeItems>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DressDesigner1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DressDesigner1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>FarazManan</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DressDesignerCharges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DressDesignerCharges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Designer1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DressG -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DressG">
+        <rdf:type rdf:resource="http://www.weddingonto.org#DressGroom"/>
+        <AreDesignedBy rdf:resource="http://www.weddingonto.org#Designer1"/>
+        <CostumeItems>Sherwani, WaistCoat pant, Kurta</CostumeItems>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DressMayun -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DressMayun">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Mayun"/>
+        <AreDesignedBy rdf:resource="http://www.weddingonto.org#Designer1"/>
+        <CostumeColor>Yellow</CostumeColor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Dresses -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Dresses">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Dowry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#DronePhotography -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#DronePhotography">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Dua -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Dua">
+        <rdf:type rdf:resource="http://www.weddingonto.org#DuaeKhair"/>
+        <IsHostedBy rdf:resource="http://www.weddingonto.org#Family1"/>
+        <IsHostedBy rdf:resource="http://www.weddingonto.org#Family2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#ElectronicAppliances -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#ElectronicAppliances">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Dowry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventBarat -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventBarat">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Barat"/>
+        <OrganizedIn rdf:resource="http://www.weddingonto.org#BaratHotel1"/>
+        <PlannedBy rdf:resource="http://www.weddingonto.org#Planner2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventC -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventC">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Chauthi"/>
+        <EventDay>FourthDayAfterWeddingCeremony</EventDay>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventK -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventK">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Maklawa"/>
+        <OccursBefore rdf:resource="http://www.weddingonto.org#EventC"/>
+        <EventDay>EventAfterWaleema</EventDay>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventM -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventM">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Mehndi"/>
+        <PlannedBy rdf:resource="http://www.weddingonto.org#Planner2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventOrganization1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventOrganization1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>KsConcepts</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventOrganization2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventOrganization2">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MalimzayEvent</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.8</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventOrganization3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventOrganization3">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>3StarEventPlanner</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventOrganization4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventOrganization4">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>CharminarEventComplex</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventPhotographer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventPhotographer1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>AhmadFayyaz</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.8</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventPhotographer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventPhotographer2">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>OsmanPervaizMughal</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventPhotographer3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventPhotographer3">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>Mobeen</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventPhotographer4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventPhotographer4">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>IrfanAhson</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.3</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventPlannerCharges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventPlannerCharges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Planner1"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Planner2"/>
+        <PlannerCharges>40Million</PlannerCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventSaloon1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventSaloon1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>WinceByNadia</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.1</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventSaloon2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventSaloon2">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>Depilex</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventSaloon4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventSaloon4">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>SplendourSignatureSalon</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventSinger1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventSinger1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>AtifAslam</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventSinger2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventSinger2">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>RahatFatehAliKhan</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.9</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#EventW -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#EventW">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Waleema"/>
+        <EventDay>LastWeddingEvent</EventDay>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Family1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Family1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#BrideFamily"/>
+        <Hosted rdf:resource="http://www.weddingonto.org#Dua"/>
+        <Paid rdf:resource="http://www.weddingonto.org#NikahCharges1"/>
+        <schema:givenName>MasterTiles owner</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Family2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Family2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#GroomFamily"/>
+        <Hosted rdf:resource="http://www.weddingonto.org#Dua"/>
+        <schema:givenName>Jalalson&apos;s Owner</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Feasting -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Feasting">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodServingStyle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FirdousAshiqAwan -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FirdousAshiqAwan">
+        <rdf:type rdf:resource="http://www.weddingonto.org#GuestOfHonor"/>
+        <InvitedBy rdf:resource="http://www.weddingonto.org#Family1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FloralArrangements -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FloralArrangements">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingDecorations"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodAndCateringCompany1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FoodAndCateringCompany1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>DynastyEventComplex</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.2</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodAndCateringCompany2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FoodAndCateringCompany2">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>EventsByPash</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.6</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodAndCateringCompany3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FoodAndCateringCompany3">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>FoodStreetSargodha</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.4</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodAndCateringCompany4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FoodAndCateringCompany4">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>SahabJeTentAndCateringServices</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FoodCharges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FoodCharges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Company1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#FriendsBride -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#FriendsBride">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Friends"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Furniture -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Furniture">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Dowry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#GhutnaPakrai -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#GhutnaPakrai">
+        <rdf:type rdf:resource="http://www.weddingonto.org#CeremonyRituals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Groom1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Groom1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Groom"/>
+        <IsSonOf rdf:resource="http://www.weddingonto.org#Family2"/>
+        <schema:givenName>MoazamKhan</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#JootaChupai -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#JootaChupai">
+        <rdf:type rdf:resource="http://www.weddingonto.org#CeremonyRituals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#KoreanchickenAndLime -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#KoreanchickenAndLime">
+        <rdf:type rdf:resource="http://schema.org/Menu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Mehndi -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Mehndi">
+        <rdf:type rdf:resource="http://schema.org/Event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#MehndiPhotography -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#MehndiPhotography">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#MehrAmount1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#MehrAmount1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Mehr"/>
+        <IsGiftedTo rdf:resource="http://www.weddingonto.org#Bride1"/>
+        <Amount>5Lac</Amount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Mufti1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Mufti1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#ImamMufti"/>
+        <Conducts rdf:resource="http://www.weddingonto.org#Nikah"/>
+        <schema:givenName>MolanaTariqJameel</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#MurghPulao -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#MurghPulao">
+        <rdf:type rdf:resource="http://schema.org/Menu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Nikah -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Nikah">
+        <rdf:type rdf:resource="http://schema.org/Event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#NikahCharges1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#NikahCharges1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Mufti1"/>
+        <NikahCharges rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1 Million</NikahCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <HasOrganizationRating rdf:resource="http://www.weddingonto.org#EventOrganization1"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Decor"/>
+        <schema:givenName>KsConcepts</schema:givenName>
+        <DecorCharges>15-20Million</DecorCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <HasOrganizationRating rdf:resource="http://www.weddingonto.org#EventOrganization2"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Barat"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Mehndi"/>
+        <schema:givenName>MalimzayEvents</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <HasOrganizationRating rdf:resource="http://www.weddingonto.org#EventOrganization3"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Decor"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Dholki"/>
+        <schema:givenName>QasimYarTiwanaDecor/EventManager</schema:givenName>
+        <DecorCharges>15-20Miilion</DecorCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization4">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <HasOrganizationRating rdf:resource="http://www.weddingonto.org#EventOrganization4"/>
+        <schema:givenName>imaginative wedding and event planner</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization5">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <HasOrganizationRating rdf:resource="http://www.weddingonto.org#EventOrganization3"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>3StarEventPlanner</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization6">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Decor"/>
+        <schema:givenName>Shahbaz</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization7">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <HasOrganizationRating rdf:resource="http://www.weddingonto.org#EventOrganization4"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>CharminarEventComplex</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organization8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organization8">
+        <rdf:type rdf:resource="http://www.weddingonto.org#EventOrganization"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Decor"/>
+        <schema:givenName>Ihsan</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organizer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organizer1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#DecorOrganizer"/>
+        <Adopted rdf:resource="http://www.weddingonto.org#Theme1"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#DecorOrganizer1"/>
+        <Organized rdf:resource="http://www.weddingonto.org#Decor"/>
+        <schema:givenName>Ahsan Habib</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organizer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organizer2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#DecorOrganizer"/>
+        <Adopted rdf:resource="http://www.weddingonto.org#Theme2"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#DecorOrganizer3"/>
+        <Organized rdf:resource="http://www.weddingonto.org#FloralArrangements"/>
+        <schema:givenName>Sundas Mustafa</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Organizer3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Organizer3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#DecorOrganizer"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#DecorOrganizer2"/>
+        <schema:givenName>Siam FlolarShop Sargodha</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Performance1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Performance1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Performances"/>
+        <schema:givenName>Fire Show</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Performance2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Performance2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Performances"/>
+        <PerformedBy rdf:resource="http://www.weddingonto.org#Performer1"/>
+        <schema:givenName>Gymnastics</schema:givenName>
+        <PerformanceCharges>1Million</PerformanceCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Performance3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Performance3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Performances"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventSinger1"/>
+        <PerformedBy rdf:resource="http://www.weddingonto.org#Singer1"/>
+        <PerformedBy rdf:resource="http://www.weddingonto.org#Singer2"/>
+        <schema:givenName>Singing</schema:givenName>
+        <PerformanceCharges>10.5Million</PerformanceCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Performer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Performer1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Performers"/>
+        <Performed rdf:resource="http://www.weddingonto.org#Performance2"/>
+        <schema:givenName>TurkishGymnastics</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#PhotoBoothes -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#PhotoBoothes">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photography"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#PhotoGrapher1Charges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#PhotoGrapher1Charges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Photographer1"/>
+        <Photo:VideographyCharges>1Million</Photo:VideographyCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Photographer1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photographer"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventPhotographer1"/>
+        <schema:givenName>Ahmad Fiaz</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Photographer2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photographer"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventPhotographer4"/>
+        <schema:givenName>IrfanAhson</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer2Charges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Photographer2Charges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Photographer2"/>
+        <schema:givenName>2.5-3Million</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Photographer3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photographer"/>
+        <schema:givenName>Mobeen</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer3Charges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Photographer3Charges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Photographer3"/>
+        <schema:givenName>2Milllion</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Photographer4">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Photographer"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventPhotographer2"/>
+        <schema:givenName>OsmanPervaizMughal</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Photographer4Charges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Photographer4Charges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Photographer4"/>
+        <schema:givenName>3-3.5Million</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Planner1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Planner1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#WeddingPlanner1"/>
+        <Planned rdf:resource="http://www.weddingonto.org#Barat"/>
+        <schema:givenName>NattyAika</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Planner2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Planner2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#WeddingPlanner"/>
+        <Planned rdf:resource="http://www.weddingonto.org#Barat"/>
+        <Planned rdf:resource="http://www.weddingonto.org#Mehndi"/>
+        <schema:givenName>SanaJunaidKhan</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#PlatedMeal -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#PlatedMeal">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodServingStyle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Ritual1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Ritual1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#MarriageProposal"/>
+        <IsBeginningOf rdf:resource="http://www.weddingonto.org#Wedding"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Ritual2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Ritual2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Mangni"/>
+        <IsDoneAfter rdf:resource="http://www.weddingonto.org#Ritual1"/>
+        <IsEquivalentTo rdf:resource="http://www.weddingonto.org#RitualHab"/>
+        <IsEquivalentTo rdf:resource="http://www.weddingonto.org#RitualN"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ring is gifted on Mangni</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#RitualHab -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#RitualHab">
+        <rdf:type rdf:resource="http://www.weddingonto.org#HabarBandi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#RitualN -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#RitualN">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Nisbat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Salami -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Salami">
+        <rdf:type rdf:resource="http://www.weddingonto.org#CeremonyRituals"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Saloon1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Saloon1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Saloon"/>
+        <GivesServices rdf:resource="http://www.weddingonto.org#Bride1"/>
+        <schema:givenName>ShazrayKhalidSaloon</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Saloon2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Saloon2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Saloon"/>
+        <GivesServices rdf:resource="http://www.weddingonto.org#Bride1"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventSaloon1"/>
+        <schema:givenName>WinceByNadia</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Saloon3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Saloon3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Saloon"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventSaloon2"/>
+        <schema:givenName>Depilex</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Saloon4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Saloon4">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Saloon"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#eventSaloon3"/>
+        <schema:givenName>M.DOTBEAUTYSALON</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Saloon5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Saloon5">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Saloon"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventSaloon4"/>
+        <schema:givenName>SplendourSignatureSalonOfficial</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#SaloonCharges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#SaloonCharges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Saloon1"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Saloon2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Singer1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Singer1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Singers"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventSinger1"/>
+        <Performed rdf:resource="http://www.weddingonto.org#Performance3"/>
+        <schema:givenName>AtifAslam</schema:givenName>
+        <SingingCharges>5Million</SingingCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Singer2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Singer2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Singers"/>
+        <Performed rdf:resource="http://www.weddingonto.org#Performance3"/>
+        <schema:givenName>Ibrar Ul Haq</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Singer3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Singer3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#Singers"/>
+        <HasRating rdf:resource="http://www.weddingonto.org#EventSinger2"/>
+        <Performed rdf:resource="http://www.weddingonto.org#Performance3"/>
+        <schema:givenName>Rahat Fateh Ali Khan</schema:givenName>
+        <SingingCharges>5.5Million</SingingCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#SingingCharges -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#SingingCharges">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingCharges"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Singer1"/>
+        <PaidTo rdf:resource="http://www.weddingonto.org#Singer3"/>
+        <SingingCharges>10.5Million</SingingCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#StirFriedRice -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#StirFriedRice">
+        <rdf:type rdf:resource="http://schema.org/Menu"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Studio1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Studio1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <DealsWith rdf:resource="http://www.weddingonto.org#BaratPhotography"/>
+        <DealsWith rdf:resource="http://www.weddingonto.org#MehndiPhotography"/>
+        <schema:givenName>Ahmad Fiaz Photography</schema:givenName>
+        <Photo:VideographyCharges>1Million</Photo:VideographyCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Studio2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Studio2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <schema:givenName>MobeenStudios</schema:givenName>
+        <Photo:VideographyCharges>2Million</Photo:VideographyCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Studio3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Studio3">
+        <rdf:type rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <schema:givenName>OsmanPervaizMughalShoots</schema:givenName>
+        <Photo:VideographyCharges>3-3.5Million</Photo:VideographyCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Studio4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Studio4">
+        <rdf:type rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>Al Saba Studio</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Studio5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Studio5">
+        <rdf:type rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <IsSituatedIn rdf:resource="http://www.weddingonto.org#City1"/>
+        <schema:givenName>Saeed Sayal photography</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Studio6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Studio6">
+        <rdf:type rdf:resource="http://www.weddingonto.org#PhotoStudio"/>
+        <DealsWith rdf:resource="http://www.weddingonto.org#BaratPhotography"/>
+        <DealsWith rdf:resource="http://www.weddingonto.org#MehndiPhotography"/>
+        <schema:givenName>IrfanAhson</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Sweets -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Sweets">
+        <rdf:type rdf:resource="http://schema.org/Menu"/>
+        <Properties>Wrapped in 24 Karat Gold Leaf</Properties>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#TheBuffet -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#TheBuffet">
+        <rdf:type rdf:resource="http://www.weddingonto.org#FoodServingStyle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Theme1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Theme1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingTheme"/>
+        <schema:givenName>FloatingDreams</schema:givenName>
+        <DecorCharges>10Million</DecorCharges>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Theme2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Theme2">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WeddingTheme"/>
+        <schema:givenName>FreshFolarDecor</schema:givenName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Waleema -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Waleema">
+        <rdf:type rdf:resource="http://schema.org/Event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#WaleemaHotel1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#WaleemaHotel1">
+        <rdf:type rdf:resource="http://www.weddingonto.org#WaleemaHotel"/>
+        <ArrangedBy rdf:resource="http://www.weddingonto.org#Planner1"/>
+        <ArrangedBy rdf:resource="http://www.weddingonto.org#Planner2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#Wedding -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#Wedding">
+        <rdf:type rdf:resource="http://schema.org/Event"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingPlanner -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#WeddingPlanner">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>SanaJunaidKhan</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5.0</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#WeddingPlanner1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#WeddingPlanner1">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#token">NattyAika</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.8</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.weddingonto.org#eventSaloon3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.weddingonto.org#eventSaloon3">
+        <rdf:type rdf:resource="http://schema.org/AggregateRating"/>
+        <schema:givenName>M.DotBeautySalon</schema:givenName>
+        <schema:ratingValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.9</schema:ratingValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.weddingonto.org#Barat">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barat has rituals DastarBandi and SehraBandi</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#DecorCharges">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">decor charges are paid to decor organizers</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#Dholki">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dholi is subevent of prewedding events</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#Mehndi">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mehndi is a prewedding event</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#Nikah">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nikah is conducted in masjid</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#SingingCharges">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singing charges are paid to singers</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#Waleema">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Waleema is last event of Wedding ceremony event</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#Wedding">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wedding has equiavalent classes waddah and Jaanh</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.weddingonto.org#WeddingPlanner">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wedding Planner is subclass of schema:Person</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
